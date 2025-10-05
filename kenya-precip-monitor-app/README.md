@@ -1,16 +1,27 @@
-# React + Vite
+# Kenya Rainfall Monitor App 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web application that helps users monitor rainfall and potential flood risks in major Kenyan towns.  
+This project is my **Frontend Capstone Project ** at ALX.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features Built So Far
+- React app scaffolded with **Vite**
+- **Tailwind CSS** integrated for styling
+- **React Router** for navigation
+- Basic component structure:
+  - `HomePage`
+  - Placeholder components for future rainfall data display
+- Project pushed to a **public GitHub repository**
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
+- **Frontend:** React, Tailwind CSS
+- **Routing:** React Router DOM
+- **Package Manager:** npm
+- **Version Control:** Git & GitHub
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Project Structure
