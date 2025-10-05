@@ -4,7 +4,7 @@ const HomePage = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-      {/* Other components will go here */}
+      <p className="p-4">Welcome to the Kenya Precipitation Monitor!</p>
     </div>
   );
 };
