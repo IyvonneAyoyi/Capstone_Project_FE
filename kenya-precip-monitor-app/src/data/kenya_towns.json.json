@@ -1,0 +1,638 @@
+[
+  {
+    "town": "Nairobi",
+    "country": "Kenya",
+    "Latitude": -1.2890006,
+    "Longitude": 36.8172812
+  },
+  {
+    "town": "Thika",
+    "country": "Kenya",
+    "Latitude": -1.036648,
+    "Longitude": 37.077523
+  },
+  {
+    "town": "Kiambu",
+    "country": "Kenya",
+    "Latitude": -1.036395,
+    "Longitude": 36.8431312
+  },
+  {
+    "town": "Ruiru",
+    "country": "Kenya",
+    "Latitude": -1.1774574,
+    "Longitude": 36.9824291
+  },
+  {
+    "town": "Kikuyu",
+    "country": "Kenya",
+    "Latitude": -1.2362919,
+    "Longitude": 36.590477
+  },
+  {
+    "town": "Mombasa",
+    "country": "Kenya",
+    "Latitude": -4.05052,
+    "Longitude": 39.667169
+  },
+  {
+    "town": "Malindi",
+    "country": "Kenya",
+    "Latitude": -3.2295935,
+    "Longitude": 39.9749752
+  },
+  {
+    "town": "Kilifi",
+    "country": "Kenya",
+    "Latitude": -3.1507392,
+    "Longitude": 39.6750716
+  },
+  {
+    "town": "Diani(Ukunda)",
+    "country": "Kenya",
+    "Latitude": -4.29451,
+    "Longitude": 39.571219
+  },
+  {
+    "town": "Lamu",
+    "country": "Kenya",
+    "Latitude": -2.2675396,
+    "Longitude": 40.9010641
+  },
+  {
+    "town": "Voi",
+    "country": "Kenya",
+    "Latitude": -3.5592753,
+    "Longitude": 38.8036049
+  },
+  {
+    "town": "Nakuru",
+    "country": "Kenya",
+    "Latitude": -0.2802724,
+    "Longitude": 36.0712048
+  },
+  {
+    "town": "Naivasha",
+    "country": "Kenya",
+    "Latitude": -0.7224425,
+    "Longitude": 36.4387834
+  },
+  {
+    "town": "Eldoret",
+    "country": "Kenya",
+    "Latitude": 0.5198329,
+    "Longitude": 35.2715481
+  },
+  {
+    "town": "Kericho",
+    "country": "Kenya",
+    "Latitude": -0.3209968,
+    "Longitude": 35.2261276
+  },
+  {
+    "town": "Bomet",
+    "country": "Kenya",
+    "Latitude": -0.7196054,
+    "Longitude": 35.2399625
+  },
+  {
+    "town": "Kajiado",
+    "country": "Kenya",
+    "Latitude": -2.121717,
+    "Longitude": 36.786255
+  },
+  {
+    "town": "Narok",
+    "country": "Kenya",
+    "Latitude": -1.2779366,
+    "Longitude": 35.4774228
+  },
+  {
+    "town": "Kakamega",
+    "country": "Kenya",
+    "Latitude": 0.4957104,
+    "Longitude": 34.8015489
+  },
+  {
+    "town": "Kitale",
+    "country": "Kenya",
+    "Latitude": 1.018076,
+    "Longitude": 35.000236
+  },
+  {
+    "town": "Bungoma",
+    "country": "Kenya",
+    "Latitude": 0.7829244,
+    "Longitude": 34.7191681
+  },
+  {
+    "town": "Busia",
+    "country": "Kenya",
+    "Latitude": 0.3712048,
+    "Longitude": 34.2647952
+  },
+  {
+    "town": "Nambale",
+    "country": "Kenya",
+    "Latitude": 0.5028324,
+    "Longitude": 34.3582169
+  },
+  {
+    "town": "Mumias",
+    "country": "Kenya",
+    "Latitude": 0.3351446,
+    "Longitude": 34.4833781
+  },
+  {
+    "town": "Vihiga",
+    "country": "Kenya",
+    "Latitude": 0.0819283,
+    "Longitude": 34.7084197
+  },
+  {
+    "town": "Butere",
+    "country": "Kenya",
+    "Latitude": 0.2163078,
+    "Longitude": 34.4981298
+  },
+  {
+    "town": "Kisumu",
+    "country": "Kenya",
+    "Latitude": -0.1029109,
+    "Longitude": 34.7541761
+  },
+  {
+    "town": "Watamu",
+    "country": "Kenya",
+    "Latitude": -3.35,
+    "Longitude": 40.0166
+  },
+  {
+    "town": "Homa Bay",
+    "country": "Kenya",
+    "Latitude": -0.5639601,
+    "Longitude": 34.3187819
+  },
+  {
+    "town": "Migori",
+    "country": "Kenya",
+    "Latitude": -1.0192237,
+    "Longitude": 34.3095427
+  },
+  {
+    "town": "Siaya",
+    "country": "Kenya",
+    "Latitude": -0.0604013,
+    "Longitude": 34.200135
+  },
+  {
+    "town": "Meru",
+    "country": "Kenya",
+    "Latitude": 0.2254509,
+    "Longitude": 37.7772624
+  },
+  {
+    "town": "Juja",
+    "country": "Kenya",
+    "Latitude": -1.105451,
+    "Longitude": 37.0126648
+  },
+  {
+    "town": "Ruiru",
+    "country": "Kenya",
+    "Latitude": -1.1774574,
+    "Longitude": 36.9824291
+  },
+  {
+    "town": "Embu",
+    "country": "Kenya",
+    "Latitude": -0.5359479,
+    "Longitude": 37.6652884
+  },
+  {
+    "town": "Mwingi",
+    "country": "Kenya",
+    "Latitude": -0.9333,
+    "Longitude": 38.0666
+  },
+  {
+    "town": "Machakos",
+    "country": "Kenya",
+    "Latitude": -1.2790047,
+    "Longitude": 37.3952698
+  },
+  {
+    "town": "Kitui",
+    "country": "Kenya",
+    "Latitude": -1.5642219,
+    "Longitude": 38.3728116
+  },
+  {
+    "town": "Chuka",
+    "country": "Kenya",
+    "Latitude": -0.2252218,
+    "Longitude": 37.4232635
+  },
+  {
+    "town": "Garissa",
+    "country": "Kenya",
+    "Latitude": -0.5236333,
+    "Longitude": 40.3564053
+  },
+  {
+    "town": "Wajir",
+    "country": "Kenya",
+    "Latitude": 1.9235406,
+    "Longitude": 40.0274064
+  },
+  {
+    "town": "Mandera",
+    "country": "Kenya",
+    "Latitude": 3.2285332,
+    "Longitude": 40.7056153
+  },
+  {
+    "town": "Kiserian",
+    "country": "Kenya",
+    "Latitude": -1.4303485,
+    "Longitude": 36.6867562
+  },
+  {
+    "town": "Nanyuki",
+    "country": "Kenya",
+    "Latitude": 0.01403,
+    "Longitude": 37.074632
+  },
+  {
+    "town": "El Wak",
+    "country": "Kenya",
+    "Latitude": 2.8076479,
+    "Longitude": 40.9287789
+  },
+  {
+    "town": "Nyeri",
+    "country": "Kenya",
+    "Latitude": -0.3212105,
+    "Longitude": 36.9295615
+  },
+  {
+    "town": "Limuru",
+    "country": "Kenya",
+    "Latitude": -1.1458738,
+    "Longitude": 36.6375998
+  },
+  {
+    "town": "Gilgil",
+    "country": "Kenya",
+    "Latitude": -0.5414303,
+    "Longitude": 36.2361646
+  },
+  {
+    "town": "Ngong",
+    "country": "Kenya",
+    "Latitude": -1.3666,
+    "Longitude": 36.65
+  },
+  {
+    "town": "Mavoko",
+    "country": "Kenya",
+    "Latitude": -1.4481149,
+    "Longitude": 36.971587
+  },
+  {
+    "town": "Karuri",
+    "country": "Kenya",
+    "Latitude": -0.713372,
+    "Longitude": 37.035695
+  },
+  {
+    "town": "Kisii",
+    "country": "Kenya",
+    "Latitude": -0.7389425,
+    "Longitude": 34.7539855
+  },
+  {
+    "town": "Mtwapa",
+    "country": "Kenya",
+    "Latitude": -3.947402,
+    "Longitude": 39.742359
+  },
+  {
+    "town": "Lodwar",
+    "country": "Kenya",
+    "Latitude": 3.1165858,
+    "Longitude": 35.6022943
+  },
+  {
+    "town": "Isiolo",
+    "country": "Kenya",
+    "Latitude": 1.00606,
+    "Longitude": 38.7478954
+  },
+  {
+    "town": "Kimilili",
+    "country": "Kenya",
+    "Latitude": 0.7852779,
+    "Longitude": 34.728181
+  },
+  {
+    "town": "Wanguru",
+    "country": "Kenya",
+    "Latitude": -0.6842256,
+    "Longitude": 37.3581488
+  },
+  {
+    "town": "Habaswein",
+    "country": "Kenya",
+    "Latitude": 1.0162202,
+    "Longitude": 39.4928911
+  },
+  {
+    "town": "Turi",
+    "country": "Kenya",
+    "Latitude": -0.2555824,
+    "Longitude": 35.7754559
+  },
+  {
+    "town": "Moyale",
+    "country": "Kenya",
+    "Latitude": 3.5159054,
+    "Longitude": 39.0584184
+  },
+  {
+    "town": "Kenol",
+    "country": "Kenya",
+    "Latitude": -0.9392976,
+    "Longitude": 37.1227711
+  },
+  {
+    "town": "Masalani",
+    "country": "Kenya",
+    "Latitude": -1.6921779,
+    "Longitude": 40.1744767
+  },
+  {
+    "town": "Muranga",
+    "country": "Kenya",
+    "Latitude": -0.8317087,
+    "Longitude": 37.0049216
+  },
+  {
+    "town": "Webuye",
+    "country": "Kenya",
+    "Latitude": 0.607628,
+    "Longitude": 34.7687756
+  },
+  {
+    "town": "Njoro",
+    "country": "Kenya",
+    "Latitude": -0.4963027,
+    "Longitude": 35.9615676
+  },
+  {
+    "town": "Kapsabet",
+    "country": "Kenya",
+    "Latitude": 0.2004978,
+    "Longitude": 35.1011501
+  },
+  {
+    "town": "Nyahururu",
+    "country": "Kenya",
+    "Latitude": 0.0333,
+    "Longitude": 36.3666
+  },
+  {
+    "town": "Kerugoya-Kutus",
+    "country": "Kenya",
+    "Latitude": -0.495951,
+    "Longitude": 37.2753928
+  },
+  {
+    "town": "Marsabit",
+    "country": "Kenya",
+    "Latitude": 2.8579582,
+    "Longitude": 37.7154892
+  },
+  {
+    "town": "Rhamu",
+    "country": "Kenya",
+    "Latitude": 3.929003,
+    "Longitude": 41.2215954
+  },
+  {
+    "town": "Mariakani",
+    "country": "Kenya",
+    "Latitude": -3.865835,
+    "Longitude": 39.47377
+  },
+  {
+    "town": "Maralal",
+    "country": "Kenya",
+    "Latitude": 1.1,
+    "Longitude": 36.7
+  },
+  {
+    "town": "Mairo-Inya",
+    "country": "Kenya",
+    "Latitude": 0.0278916,
+    "Longitude": 36.4085673
+  },
+  {
+    "town": "Makutano",
+    "country": "Kenya",
+    "Latitude": 3.5146338,
+    "Longitude": 35.222823
+  },
+  {
+    "town": "Elburgon",
+    "country": "Kenya",
+    "Latitude": -0.296292,
+    "Longitude": 35.804257
+  },
+  {
+    "town": "Nyamira",
+    "country": "Kenya",
+    "Latitude": -0.6517907,
+    "Longitude": 34.934167
+  },
+  {
+    "town": "Isebania",
+    "country": "Kenya",
+    "Latitude": -1.2403216,
+    "Longitude": 34.4792225
+  },
+  {
+    "town": "Karatina",
+    "country": "Kenya",
+    "Latitude": -0.482246,
+    "Longitude": 37.125224
+  },
+  {
+    "town": "Kakuma",
+    "country": "Kenya",
+    "Latitude": 3.706286,
+    "Longitude": 34.873489
+  },
+  {
+    "town": "Lafey",
+    "country": "Kenya",
+    "Latitude": 3.4970367,
+    "Longitude": 41.183628
+  },
+  {
+    "town": "Bondo",
+    "country": "Kenya",
+    "Latitude": -0.1006181,
+    "Longitude": 34.2253023
+  },
+  {
+    "town": "Kabarnet",
+    "country": "Kenya",
+    "Latitude": 0.496524,
+    "Longitude": 35.743139
+  },
+  {
+    "town": "Kehancha",
+    "country": "Kenya",
+    "Latitude": -1.1932593,
+    "Longitude": 34.6200103
+  },
+  {
+    "town": "Maua",
+    "country": "Kenya",
+    "Latitude": -1.0590448,
+    "Longitude": 37.1415219
+  },
+  {
+    "town": "Taveta",
+    "country": "Kenya",
+    "Latitude": -3.559095,
+    "Longitude": 37.945536
+  },
+  {
+    "town": "Takaba",
+    "country": "Kenya",
+    "Latitude": 3.3987343,
+    "Longitude": 40.2241984
+  },
+  {
+    "town": "Eldama Ravine",
+    "country": "Kenya",
+    "Latitude": -0.0198497,
+    "Longitude": 35.7330897
+  },
+  {
+    "town": "Hola",
+    "country": "Kenya",
+    "Latitude": -1.4976808,
+    "Longitude": 40.034911
+  },
+  {
+    "town": "Mai Mahiu",
+    "country": "Kenya",
+    "Latitude": -0.9827242,
+    "Longitude": 36.5856896
+  },
+  {
+    "town": "Rongo",
+    "country": "Kenya",
+    "Latitude": -0.8186517,
+    "Longitude": 34.5986205
+  },
+  {
+    "town": "Oyugis",
+    "country": "Kenya",
+    "Latitude": -0.509908,
+    "Longitude": 34.734576
+  },
+  {
+    "town": "Wote",
+    "country": "Kenya",
+    "Latitude": -1.7803167,
+    "Longitude": 37.6290353
+  },
+  {
+    "town": "Emali",
+    "country": "Kenya",
+    "Latitude": -2.081915,
+    "Longitude": 37.475521
+  },
+  {
+    "town": "Garbatula",
+    "country": "Kenya",
+    "Latitude": 1,
+    "Longitude": 38
+  },
+  {
+    "town": "Mbale",
+    "country": "Kenya",
+    "Latitude": 0.083501,
+    "Longitude": 34.7203265
+  },
+  {
+    "town": "Awendo",
+    "country": "Kenya",
+    "Latitude": -0.8746895,
+    "Longitude": 34.5284622
+  },
+  {
+    "town": "Kiminini",
+    "country": "Kenya",
+    "Latitude": 0.9329072,
+    "Longitude": 34.9937385
+  },
+  {
+    "town": "Moi's Bridge",
+    "country": "Kenya",
+    "Latitude": 0.87373,
+    "Longitude": 35.1212752
+  },
+  {
+    "town": "Mazeras",
+    "country": "Kenya",
+    "Latitude": -3.967571,
+    "Longitude": 39.549806
+  },
+  {
+    "town": "Malaba",
+    "country": "Kenya",
+    "Latitude": 0.6332567,
+    "Longitude": 34.2727049
+  },
+  {
+    "town": "Makindu",
+    "country": "Kenya",
+    "Latitude": -2.280636,
+    "Longitude": 37.81954
+  },
+  {
+    "town": "Banissa",
+    "country": "Kenya",
+    "Latitude": 3.9978261,
+    "Longitude": 40.4623531
+  },
+  {
+    "town": "Msambweni",
+    "country": "Kenya",
+    "Latitude": -4.4027541,
+    "Longitude": 39.4138577
+  },
+  {
+    "town": "Namanga",
+    "country": "Kenya",
+    "Latitude": -2.546715,
+    "Longitude": 36.7974379
+  },
+  {
+    "town": "Mbita",
+    "country": "Kenya",
+    "Latitude": -0.4997824,
+    "Longitude": 34.3143037
+  },
+  {
+    "town": "Isinya",
+    "country": "Kenya",
+    "Latitude": -1.6859676,
+    "Longitude": 36.8466684
+  }
+]
