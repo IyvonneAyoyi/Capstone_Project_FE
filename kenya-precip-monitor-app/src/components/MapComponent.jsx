@@ -39,7 +39,7 @@ const MapComponent = () => {
           <Popup>
             <strong>{town.town}</strong>
             <br />
-            🌧️ Rainfall: {town.rainfall ?? "N/A"} mm
+            Rainfall: {town.rainfall ?? "N/A"} mm
             <br />
             Risk: {town.risk}
           </Popup>
