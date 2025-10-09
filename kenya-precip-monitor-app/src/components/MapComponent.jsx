@@ -41,10 +41,11 @@ const MapComponent = () => {
             <br />
             🌧️ Rainfall: {town.rainfall ?? "N/A"} mm
             <br />
-            ⚠️ Risk: {town.risk}
+            Risk: {town.risk}
           </Popup>
         </Marker>
       ))}
     </MapContainer>
   );
 };
+export default MapComponent;
