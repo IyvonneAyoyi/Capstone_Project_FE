@@ -1,5 +1,8 @@
 import {useState } from "react";
-
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { getDailyRainfall } from "../api/weatherAPI";
+import { getRiskLevel } from "../utils/riskLevel";
+import towns from "../data/kenya_towns.json";
 
 
 
