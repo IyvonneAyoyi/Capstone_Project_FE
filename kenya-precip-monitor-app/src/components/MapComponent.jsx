@@ -51,9 +51,9 @@ const MapComponent = () => {
             <br />
             Rainfall: {town.rainfall ?? "N/A"} mm
             <br />
-            <p className={`${getRiskColor(town.risk)} text-white px-2 py-1 rounded w-fit`}>
+            <span className={`${getRiskColor(town.risk)} text-white px-2 py-1 rounded w-fit`}>
               Risk: {town.risk ?? "N/A"}
-           </p>
+           </span>
           </Popup>
         </Marker>
       ))}
