@@ -15,6 +15,6 @@ export function getRiskColor(risk) {
     case "High":
       return "bg-red-500";
     default:
-      return "bg-gray-400"; // for 'No Data'
+      return "bg-gray-400"; 
   }
 }
