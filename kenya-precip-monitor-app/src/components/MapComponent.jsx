@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { getRiskLevel } from "../utils/riskLevel";
+import { getRiskColor } from "../utils/riskLevel";
 import townData from "../data/kenya_towns.json";
 
 // Fix marker icon issue in React Leaflet 
@@ -21,7 +22,7 @@ const MapComponent = () => {
     //Rainfall value for demo purposes
     const rainfall = Math.floor(Math.random() * 50); 
 
-    // Calculate risk level based on rainfall
+    // Calculate flood risk level based on rainfall(low,medium,high)
     const risk = getRiskLevel(rainfall);
 
     return { ...t, rainfall, risk };
@@ -50,7 +51,9 @@ const MapComponent = () => {
             <br />
             Rainfall: {town.rainfall ?? "N/A"} mm
             <br />
-            Risk: {town.risk ?? "N/A"}
+            <p className={`${getRiskColor(town.risk)} text-white px-2 py-1 rounded w-fit`}>
+              Risk: {town.risk ?? "N/A"}
+           </p>
           </Popup>
         </Marker>
       ))}
