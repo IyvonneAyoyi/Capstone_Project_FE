@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
+import { getRiskLevel } from "../utils/riskLevel";
 import townData from "../data/kenya_towns.json";
 
 // Fix marker icon issue in React Leaflet 
@@ -16,19 +17,19 @@ const MapComponent = () => {
   const [towns, setTowns] = useState(townData);
 
   useEffect(() => {
-    // Later, you’ll replace this with fetchWeatherData(town.Lat, town.Lon)
-    const updated = townData.map((t) => ({
-      ...t,
-      rainfall: Math.floor(Math.random() * 50), // dummy rainfall for now
-      risk:
-        Math.floor(Math.random() * 50) < 15
-          ? "Low"
-          : Math.floor(Math.random() * 50) < 30
-          ? "Medium"
-          : "High",
-    }));
-    setTowns(updated);
-  }, []);
+  const updated = townData.map((t) => {
+    //Rainfall value for demo purposes
+    const rainfall = Math.floor(Math.random() * 50); 
+
+    // Calculate risk level based on rainfall
+    const risk = getRiskLevel(rainfall);
+
+    return { ...t, rainfall, risk };
+  });
+
+  setTowns(updated);
+}, []);
+
 
   return (
     <MapContainer
