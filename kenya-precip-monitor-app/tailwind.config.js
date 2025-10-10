@@ -9,4 +9,12 @@ export default{
     extend: {},
   },
   plugins: [],
+  safelist: [
+  "bg-green-500",
+  "bg-yellow-500",
+  "bg-red-500",
+  "bg-gray-400"
+],
+
 };
+
