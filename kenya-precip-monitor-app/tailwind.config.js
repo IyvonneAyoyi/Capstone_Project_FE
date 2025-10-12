@@ -1,20 +1,17 @@
 /** @type {import('tailwindcss').Config} */
-export default{
+export default {
   content: [
     "./index.html",
-    "./public/index.html",
-    "./src/**/*.{js,ts,jsx,tsx}", // make sure this matches your source files
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  safelist: [
+    "bg-green-500",
+    "bg-yellow-400",
+    "bg-red-500",
+    "bg-gray-400",
   ],
   theme: {
     extend: {},
   },
   plugins: [],
-  safelist: [
-  "bg-green-500",
-  "bg-yellow-500",
-  "bg-red-500",
-  "bg-gray-400"
-],
-
 };
-
