@@ -1,33 +1,94 @@
-import React, { useState } from "react";
-import FilterDropdown from "./FilterDropdown";
+import { useMemo } from "react";
 
-const Sidebar = ({ onFilter, selectedTownData }) => {
+const Sidebar = ({
+  towns,
+  selectedTown,
+  setSelectedTown,
+  selectedRisk,
+  setSelectedRisk,
+}) => {
+  const riskOptions = ["All", "High", "Medium", "Low"];
+
+  // Compute filtered towns and counts
+  const { filteredTowns, riskCounts, detail } = useMemo(() => {
+    let filtered = towns;
+
+    if (selectedRisk !== "All") {
+      filtered = filtered.filter((t) => t.risk === selectedRisk);
+    }
+
+    if (selectedTown !== "All") {
+      filtered = filtered.filter((t) => t.town === selectedTown);
+    }
+
+    const counts = towns.reduce(
+      (acc, t) => {
+        acc[t.risk] = (acc[t.risk] || 0) + 1;
+        return acc;
+      },
+      { High: 0, Medium: 0, Low: 0 }
+    );
+
+    const detail = selectedTown !== "All" ? filtered[0] : null;
+
+    return { filteredTowns: filtered, riskCounts: counts, detail };
+  }, [towns, selectedTown, selectedRisk]);
+
   return (
-    <div className="w-72 bg-white/90 backdrop-blur-md p-5 rounded-xl shadow-lg border border-gray-200 flex flex-col justify-between h-[80vh]">
-      <div>
-        <h2 className="text-lg font-semibold mb-4 text-gray-900">
-          Rainfall & Flood Monitor
-        </h2>
+    <div className="w-72 bg-gray-50 shadow-lg p-6 flex flex-col overflow-y-auto">
+      <h1 className="text-2xl font-bold mb-6">Filters & Summary</h1>
 
-        {/* Filter Section */}
-        <FilterDropdown onFilter={onFilter} />
+      {/* Town Dropdown */}
+      <div className="mb-4">
+        <label className="block mb-1 text-gray-700">Town</label>
+        <select
+          value={selectedTown}
+          onChange={(e) => setSelectedTown(e.target.value)}
+          className="w-full border border-gray-300 rounded px-3 py-2"
+        >
+          <option value="All">All</option>
+          {towns.map((t) => (
+            <option key={t.town} value={t.town}>
+              {t.town}
+            </option>
+          ))}
+        </select>
+      </div>
 
-        {/* Divider */}
-        <hr className="my-4 border-gray-300" />
+      {/* Risk Dropdown */}
+      <div className="mb-6">
+        <label className="block mb-1 text-gray-700">Risk</label>
+        <select
+          value={selectedRisk}
+          onChange={(e) => setSelectedRisk(e.target.value)}
+          className="w-full border border-gray-300 rounded px-3 py-2"
+        >
+          {riskOptions.map((risk) => (
+            <option key={risk} value={risk}>
+              {risk}
+            </option>
+          ))}
+        </select>
+      </div>
 
-        {/* Risk Summary */}
-        {selectedTownData && (
-          <div className="text-sm text-gray-800 space-y-1">
-            <p>
-              <strong>Rainfall ({selectedTownData.period}):</strong>{" "}
-              {selectedTownData.rainfall ?? "N/A"} mm
-            </p>
-            <p>
-              <strong>Flood Risk:</strong> {selectedTownData.risk ?? "N/A"}
-            </p>
-            <p>
-              <strong>Town:</strong> {selectedTownData.town ?? "N/A"}
-            </p>
+      {/* Dashboard */}
+      <div className="mb-6">
+        <h2 className="text-lg font-semibold mb-2">Summary</h2>
+        <div className="bg-gray-100 p-3 rounded mb-2">
+          <strong>Matching towns:</strong> {filteredTowns.length}
+        </div>
+
+        {detail && (
+          <div className="bg-blue-100 p-3 rounded">
+            <div>
+              <strong>Town:</strong> {detail.town}
+            </div>
+            <div>
+              <strong>Rainfall:</strong> {detail.rainfall} mm
+            </div>
+            <div>
+              <strong>Risk:</strong> {detail.risk}
+            </div>
           </div>
         )}
       </div>
