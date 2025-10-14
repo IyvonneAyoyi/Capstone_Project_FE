@@ -4,6 +4,7 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { getRiskLevel } from "../utils/riskLevel";
 import { getRiskColor } from "../utils/riskLevel";
+import Legend from "../components/Legend";
 import townData from "../data/kenya_towns.json";
 
 // Fix marker icon issue in React Leaflet 
@@ -32,7 +33,8 @@ const MapComponent = () => {
 }, []);
 
 
-  return (
+return (
+  <div className="relative">
     <MapContainer
       center={[-1.286389, 36.817223]}
       zoom={7}
@@ -51,14 +53,24 @@ const MapComponent = () => {
             <br />
             Rainfall: {town.rainfall ?? "N/A"} mm
             <br />
-            <span className={`${getRiskColor(town.risk)} text-white px-2 py-1 rounded w-fit`}>
+            <span
+              className={`${getRiskColor(
+                town.risk
+              )} text-white px-2 py-1 rounded w-fit`}
+            >
               Risk: {town.risk ?? "N/A"}
-           </span>
+            </span>
           </Popup>
         </Marker>
       ))}
     </MapContainer>
-  );
+
+    {/* Legend fixed to bottom-right corner */}
+    <div className="absolute bottom-6 right-6 z-[1000]">
+      <Legend />
+    </div>
+  </div>
+);
 };
 
 export default MapComponent;

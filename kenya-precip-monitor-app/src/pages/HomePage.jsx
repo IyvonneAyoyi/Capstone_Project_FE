@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import MapComponent from "../components/MapComponent";
+import Legend from "../components/Legend";
 
 const HomePage = () => {
   return (
