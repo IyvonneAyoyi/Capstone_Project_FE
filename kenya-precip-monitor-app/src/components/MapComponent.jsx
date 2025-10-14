@@ -59,8 +59,7 @@ return (
     <Popup>
       <div
         style={{
-          backgroundColor: getRiskColor(town.risk, "hex"),
-          color: "white",
+          color: "black",
           padding: "8px",
           borderRadius: "6px",
         }}
@@ -68,8 +67,6 @@ return (
         <strong>{town.town}</strong>
         <br />
         Rainfall: {town.rainfall ?? "N/A"} mm
-        <br />
-        Risk: {town.risk ?? "N/A"}
       </div>
     </Popup>
   </CircleMarker>
