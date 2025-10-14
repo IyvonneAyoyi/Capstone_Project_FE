@@ -10,7 +10,7 @@ const Sidebar = ({
   const riskOptions = ["All", "High", "Medium", "Low"];
 
   // Compute filtered towns and counts
-  const { filteredTowns, riskCounts, detail } = useMemo(() => {
+  const { filteredTowns, detail } = useMemo(() => {
     let filtered = towns;
 
     if (selectedRisk !== "All") {
