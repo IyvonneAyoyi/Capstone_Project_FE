@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar";
 import MapComponent from "../components/MapComponent";
-import Legend from "../components/Legend";
+import Sidebar from "../components/Sidebar";
 
 const HomePage = () => {
   return (
@@ -8,6 +8,7 @@ const HomePage = () => {
       <Navbar />
       <div className="flex-1 p-4">
         <MapComponent />
+        <Sidebar />
       </div>
     </div>
   );
