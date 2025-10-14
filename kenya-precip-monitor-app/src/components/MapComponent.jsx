@@ -51,10 +51,11 @@ return (
     key={i}
     center={[town.Latitude, town.Longitude]}
     radius={10}
-    fillColor={getRiskColor(town.risk, "hex")}
-    color="#ffffff"
-    weight={1.5}
-    fillOpacity={0.9}
+    pathOptions={{color: 'white',
+      fillColor:getRiskColor(town.risk, "hex"),
+      weight:1.5,
+      fillOpacity:0.9,
+    }}
   >
     <Popup>
       <div
