@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, CircleMarker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { getRiskLevel } from "../utils/riskLevel";
@@ -47,22 +47,34 @@ return (
       />
 
       {towns.map((town, i) => (
-        <Marker key={i} position={[town.Latitude, town.Longitude]}>
-          <Popup>
-            <strong>{town.town}</strong>
-            <br />
-            Rainfall: {town.rainfall ?? "N/A"} mm
-            <br />
-            <span
-              className={`${getRiskColor(
-                town.risk
-              )} text-white px-2 py-1 rounded w-fit`}
-            >
-              Risk: {town.risk ?? "N/A"}
-            </span>
-          </Popup>
-        </Marker>
-      ))}
+  <CircleMarker
+    key={i}
+    center={[town.Latitude, town.Longitude]}
+    radius={10}
+    fillColor={getRiskColor(town.risk, "hex")}
+    color="#ffffff"
+    weight={1.5}
+    fillOpacity={0.9}
+  >
+    <Popup>
+      <div
+        style={{
+          backgroundColor: getRiskColor(town.risk, "hex"),
+          color: "white",
+          padding: "8px",
+          borderRadius: "6px",
+        }}
+      >
+        <strong>{town.town}</strong>
+        <br />
+        Rainfall: {town.rainfall ?? "N/A"} mm
+        <br />
+        Risk: {town.risk ?? "N/A"}
+      </div>
+    </Popup>
+  </CircleMarker>
+))}
+
     </MapContainer>
 
     {/* Legend fixed to bottom-right corner */}
