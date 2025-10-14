@@ -1,4 +1,11 @@
 import React from "react";
+import { getRiskColor } from "../utils/riskLevel";
+
+const risks = [
+  { level: "Low", label: "Low Risk" },
+  { level: "Medium", label: "Medium Risk" },
+  { level: "High", label: "High Risk" },
+];
 
 const Legend = () => {
   return (
@@ -8,20 +15,14 @@ const Legend = () => {
       </h3>
 
       <div className="space-y-3">
-        <div className="flex items-center gap-3">
-          <span className="w-4 h-4 rounded-full bg-green-500"></span>
-          <span className="text-gray-800">Low Risk</span>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <span className="w-4 h-4 rounded-full bg-yellow-400"></span>
-          <span className="text-gray-800">Medium Risk</span>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <span className="w-4 h-4 rounded-full bg-red-500"></span>
-          <span className="text-gray-800">High Risk</span>
-        </div>
+        {risks.map((r) => (
+          <div key={r.level} className="flex items-center gap-3">
+            <span
+              className={`w-4 h-4 rounded-full ${getRiskColor(r.level, "class")}`}
+            ></span>
+            <span className="text-gray-800">{r.label}</span>
+          </div>
+        ))}
       </div>
     </div>
   );
