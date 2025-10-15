@@ -1,5 +1,5 @@
+// src/components/Sidebar.js
 import { useMemo } from "react";
-import dayjs from "dayjs";
 
 const Sidebar = ({
   towns,
@@ -20,58 +20,28 @@ const Sidebar = ({
     "Tomorrow",
     "Next 7 Days",
     "Next 2 Weeks",
-    "Next 16 Days"
+    "Next 16 Days",
   ];
 
-  // Map dropdown label → actual date string or date range
-  const dateMap = dateOptions.reduce((acc, label) => {
-    let dateValue;
-    switch(label) {
-      case "Today":
-        dateValue = dayjs().format("YYYY-MM-DD");
-        break;
-      case "Tomorrow":
-        dateValue = dayjs().add(1, "day").format("YYYY-MM-DD");
-        break;
-      case "7 Days Ago":
-        dateValue = dayjs().subtract(7, "day").format("YYYY-MM-DD");
-        break;
-      case "2 Weeks Ago":
-        dateValue = dayjs().subtract(2, "week").format("YYYY-MM-DD");
-        break;
-      case "3 Weeks Ago":
-        dateValue = dayjs().subtract(3, "week").format("YYYY-MM-DD");
-        break;
-      case "30 Days Ago":
-        dateValue = dayjs().subtract(30, "day").format("YYYY-MM-DD");
-        break;
-      default:
-        dateValue = label; // placeholder for future ranges like "Next 7 Days"
-    }
-    acc[label] = dateValue;
-    return acc;
-  }, {});
-
+  // Memoized filtering logic
   const { filteredTowns, detail } = useMemo(() => {
     let filtered = towns;
 
+    // Filter by risk
     if (selectedRisk !== "All") {
       filtered = filtered.filter((t) => t.risk === selectedRisk);
     }
 
+    // Filter by town
     if (selectedTown !== "All") {
       filtered = filtered.filter((t) => t.town === selectedTown);
     }
 
-    if (selectedDate && dateMap[selectedDate]) {
-      // minimal placeholder filter: match towns with date
-      filtered = filtered.filter((t) => t.date === dateMap[selectedDate]);
-    }
-
+    // Select first match for details
     const detail = selectedTown !== "All" ? filtered[0] : null;
 
     return { filteredTowns: filtered, detail };
-  }, [towns, selectedTown, selectedRisk, selectedDate]);
+  }, [towns, selectedTown, selectedRisk]);
 
   return (
     <div className="w-72 bg-gray-50 shadow-lg p-6 flex flex-col overflow-y-auto">
@@ -112,7 +82,7 @@ const Sidebar = ({
 
       {/* Date Dropdown */}
       <div className="mb-6">
-        <label className="block mb-1 text-gray-700">Date</label>
+        <label className="block mb-1 text-gray-700">Date Range</label>
         <select
           value={selectedDate}
           onChange={(e) => setSelectedDate(e.target.value)}
@@ -126,27 +96,33 @@ const Sidebar = ({
         </select>
       </div>
 
-      {/* Dashboard */}
+      {/* Summary Section */}
       <div className="mb-6">
         <h2 className="text-lg font-semibold mb-2">Summary</h2>
+
         <div className="bg-gray-100 p-3 rounded mb-2">
           <strong>Matching towns:</strong> {filteredTowns.length}
         </div>
 
-        {detail && (
+        {detail ? (
           <div className="bg-blue-100 p-3 rounded">
             <div>
               <strong>Town:</strong> {detail.town}
             </div>
             <div>
-              <strong>Rainfall:</strong> {detail.rainfall} mm
+              <strong>Rainfall:</strong>{" "}
+              {detail.rainfall !== null ? `${detail.rainfall} mm` : "N/A"}
             </div>
             <div>
-              <strong>Risk:</strong> {detail.risk}
+              <strong>Risk:</strong> {detail.risk || "N/A"}
             </div>
             <div>
-              <strong>Date:</strong> {selectedDate}
+              <strong>Date Range:</strong> {selectedDate}
             </div>
+          </div>
+        ) : (
+          <div className="text-gray-500 italic">
+            Select a town to view details.
           </div>
         )}
       </div>
