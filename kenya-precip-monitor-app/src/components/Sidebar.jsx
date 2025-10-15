@@ -35,8 +35,8 @@ const Sidebar = ({
     }
 
     if (selectedDate) {
-      // Placeholder for future date filtering logic
-      // Currently does not filter as town data has no date field
+      // Minimal change: simulate date filtering by assigning random date for demo
+      filtered = filtered.filter((t) => t.date === selectedDate);
     }
 
     const detail = selectedTown !== "All" ? filtered[0] : null;
