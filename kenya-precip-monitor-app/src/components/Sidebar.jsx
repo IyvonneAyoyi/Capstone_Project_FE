@@ -6,10 +6,24 @@ const Sidebar = ({
   setSelectedTown,
   selectedRisk,
   setSelectedRisk,
+  selectedDate,
+  setSelectedDate
 }) => {
   const riskOptions = ["All", "High", "Medium", "Low"];
+  const dateOptions = [
+    "All",
+    "30 Days Ago",
+    "3 Weeks Ago",
+    "2 Weeks Ago",
+    "7 Days Ago",
+    "Today",
+    "Tomorrow",
+    "Next 7 Days",
+    "Next 2 Weeks",
+    "Next 16 Days"
+  ];
 
-  // Compute filtered towns and counts
+  // Compute filtered towns and selected town detail
   const { filteredTowns, detail } = useMemo(() => {
     let filtered = towns;
 
@@ -21,18 +35,16 @@ const Sidebar = ({
       filtered = filtered.filter((t) => t.town === selectedTown);
     }
 
-    const counts = towns.reduce(
-      (acc, t) => {
-        acc[t.risk] = (acc[t.risk] || 0) + 1;
-        return acc;
-      },
-      { High: 0, Medium: 0, Low: 0 }
-    );
+    if (selectedDate && selectedDate !== "All") {
+      // Placeholder: filter logic based on date can be implemented
+      // For now, we just return all as actual dates are not in town data
+      filtered = filtered; 
+    }
 
     const detail = selectedTown !== "All" ? filtered[0] : null;
 
-    return { filteredTowns: filtered,detail };
-  }, [towns, selectedTown, selectedRisk]);
+    return { filteredTowns: filtered, detail };
+  }, [towns, selectedTown, selectedRisk, selectedDate]);
 
   return (
     <div className="w-72 bg-gray-50 shadow-lg p-6 flex flex-col overflow-y-auto">
@@ -56,7 +68,7 @@ const Sidebar = ({
       </div>
 
       {/* Risk Dropdown */}
-      <div className="mb-6">
+      <div className="mb-4">
         <label className="block mb-1 text-gray-700">Risk</label>
         <select
           value={selectedRisk}
@@ -66,6 +78,22 @@ const Sidebar = ({
           {riskOptions.map((risk) => (
             <option key={risk} value={risk}>
               {risk}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      {/* Date Dropdown */}
+      <div className="mb-6">
+        <label className="block mb-1 text-gray-700">Date</label>
+        <select
+          value={selectedDate}
+          onChange={(e) => setSelectedDate(e.target.value)}
+          className="w-full border border-gray-300 rounded px-3 py-2"
+        >
+          {dateOptions.map((date) => (
+            <option key={date} value={date}>
+              {date}
             </option>
           ))}
         </select>
@@ -88,6 +116,9 @@ const Sidebar = ({
             </div>
             <div>
               <strong>Risk:</strong> {detail.risk}
+            </div>
+            <div>
+              <strong>Date:</strong> {selectedDate}
             </div>
           </div>
         )}
