@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import dayjs from "dayjs";
 
 const Sidebar = ({
   towns,
@@ -22,7 +23,35 @@ const Sidebar = ({
     "Next 16 Days"
   ];
 
-  // Compute filtered towns and selected town detail
+  // Map dropdown label → actual date string or date range
+  const dateMap = dateOptions.reduce((acc, label) => {
+    let dateValue;
+    switch(label) {
+      case "Today":
+        dateValue = dayjs().format("YYYY-MM-DD");
+        break;
+      case "Tomorrow":
+        dateValue = dayjs().add(1, "day").format("YYYY-MM-DD");
+        break;
+      case "7 Days Ago":
+        dateValue = dayjs().subtract(7, "day").format("YYYY-MM-DD");
+        break;
+      case "2 Weeks Ago":
+        dateValue = dayjs().subtract(2, "week").format("YYYY-MM-DD");
+        break;
+      case "3 Weeks Ago":
+        dateValue = dayjs().subtract(3, "week").format("YYYY-MM-DD");
+        break;
+      case "30 Days Ago":
+        dateValue = dayjs().subtract(30, "day").format("YYYY-MM-DD");
+        break;
+      default:
+        dateValue = label; // placeholder for future ranges like "Next 7 Days"
+    }
+    acc[label] = dateValue;
+    return acc;
+  }, {});
+
   const { filteredTowns, detail } = useMemo(() => {
     let filtered = towns;
 
@@ -34,9 +63,9 @@ const Sidebar = ({
       filtered = filtered.filter((t) => t.town === selectedTown);
     }
 
-    if (selectedDate) {
-      // Minimal change: simulate date filtering by assigning random date for demo
-      filtered = filtered.filter((t) => t.date === selectedDate);
+    if (selectedDate && dateMap[selectedDate]) {
+      // minimal placeholder filter: match towns with date
+      filtered = filtered.filter((t) => t.date === dateMap[selectedDate]);
     }
 
     const detail = selectedTown !== "All" ? filtered[0] : null;
