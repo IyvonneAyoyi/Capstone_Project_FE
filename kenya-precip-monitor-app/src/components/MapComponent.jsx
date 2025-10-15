@@ -48,14 +48,10 @@ const MapComponent = ({ towns, townFilter, riskFilter, selectedDate }) => {
             }}
           >
             <Popup>
-              <div style={{ color: "black", padding: "8px", borderRadius: "6px" }}>
-                <strong>{town.town}</strong>
+              <div style={{ color: "black", fontWeight: 600 }}>
+                {town.town}
                 <br />
-                Rainfall: {town.rainfall} mm
-                <br />
-                Risk: {town.risk}
-                <br />
-                Date: {town.date ?? "N/A"}
+                Rainfall: {town.rainfall ?? 0} mm
               </div>
             </Popup>
           </CircleMarker>
