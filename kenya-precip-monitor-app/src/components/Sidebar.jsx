@@ -31,7 +31,7 @@ const Sidebar = ({
 
     const detail = selectedTown !== "All" ? filtered[0] : null;
 
-    return { filteredTowns: filtered, riskCounts: counts, detail };
+    return { filteredTowns: filtered,detail };
   }, [towns, selectedTown, selectedRisk]);
 
   return (
