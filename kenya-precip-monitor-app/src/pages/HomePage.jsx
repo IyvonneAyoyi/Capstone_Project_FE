@@ -3,7 +3,7 @@ import Sidebar from "../components/Sidebar";
 import MapComponent from "../components/MapComponent";
 import townData from "../data/kenya_towns.json";
 import { getRiskLevel } from "../utils/riskLevel";
-import { getDailyRainfall } from "../utils/weatherAPI";
+import { getDailyRainfall } from "../api/weatherAPI";
 
 const HomePage = () => {
   const [towns, setTowns] = useState([]);
