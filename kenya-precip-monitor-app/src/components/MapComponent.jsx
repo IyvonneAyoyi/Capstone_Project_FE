@@ -1,5 +1,5 @@
 import React from "react";
-import { MapContainer, TileLayer, CircleMarker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, CircleMarker, Popup,ZoomControl } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { getRiskColor } from "../utils/riskLevel";
@@ -28,6 +28,7 @@ const MapComponent = ({ towns, townFilter, riskFilter, selectedDate }) => {
         center={[-1.286389, 36.817223]}
         zoom={7}
         scrollWheelZoom={true}
+        zoomControl={false}
         className="h-[100vh] w-full"
       >
         <TileLayer
@@ -56,6 +57,7 @@ const MapComponent = ({ towns, townFilter, riskFilter, selectedDate }) => {
             </Popup>
           </CircleMarker>
         ))}
+        <ZoomControl position="topright" />
       </MapContainer>
 
       <div className="absolute bottom-6 right-6 z-[1000]">
