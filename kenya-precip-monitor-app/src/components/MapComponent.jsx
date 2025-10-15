@@ -14,11 +14,12 @@ L.Icon.Default.mergeOptions({
   shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
 });
 
-const MapComponent = ({ towns, townFilter, riskFilter }) => {
+const MapComponent = ({ towns, townFilter, riskFilter, selectedDate }) => {
   const filteredTowns = towns.filter((t) => {
     const riskMatch = riskFilter === "All" || t.risk === riskFilter;
     const townMatch = townFilter === "All" || t.town === townFilter;
-    return riskMatch && townMatch;
+    const dateMatch = !selectedDate || selectedDate === "All" || t.date === selectedDate;
+    return riskMatch && townMatch && dateMatch;
   });
 
   return (
@@ -53,6 +54,8 @@ const MapComponent = ({ towns, townFilter, riskFilter }) => {
                 Rainfall: {town.rainfall} mm
                 <br />
                 Risk: {town.risk}
+                <br />
+                Date: {town.date ?? "N/A"}
               </div>
             </Popup>
           </CircleMarker>
