@@ -11,7 +11,6 @@ const Sidebar = ({
 }) => {
   const riskOptions = ["All", "High", "Medium", "Low"];
   const dateOptions = [
-    "All",
     "30 Days Ago",
     "3 Weeks Ago",
     "2 Weeks Ago",
@@ -35,10 +34,9 @@ const Sidebar = ({
       filtered = filtered.filter((t) => t.town === selectedTown);
     }
 
-    if (selectedDate && selectedDate !== "All") {
-      // Placeholder: filter logic based on date can be implemented
-      // For now, we just return all as actual dates are not in town data
-      filtered = filtered; 
+    if (selectedDate) {
+      // Placeholder for future date filtering logic
+      // Currently does not filter as town data has no date field
     }
 
     const detail = selectedTown !== "All" ? filtered[0] : null;
