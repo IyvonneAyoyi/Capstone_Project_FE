@@ -67,7 +67,7 @@ const HomePage = () => {
             towns={towns}
             townFilter={selectedTown}
             riskFilter={selectedRisk}
-            selectedDate={selectedDate}
+            dateFilter={selectedDate}
           />
         )}
       </div>
