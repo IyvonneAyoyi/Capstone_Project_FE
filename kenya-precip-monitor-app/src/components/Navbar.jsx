@@ -1,16 +1,13 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
-const Navbar = () => {
-  return (
-    <nav className="bg-blue-600 text-white px-6 py-4 flex justify-between items-center">
-      <h1 className="text-2xl font-bold">Rainfall Monitor</h1>
-
-      <div className="space-x-4">
-        <button className="bg-blue-500 hover:bg-blue-400 px-3 py-1 rounded">Home</button>
-        <button className="bg-blue-500 hover:bg-blue-400 px-3 py-1 rounded">About</button>
-      </div>
-    </nav>
-  );
-};
+const Navbar = () => (
+  <nav className="bg-blue-600 text-white p-4 flex justify-between items-center">
+    <h1 className="font-bold text-lg tracking-wide">PrecipMonitor KE</h1>
+    <div className="flex gap-4 text-sm sm:text-base">
+      <Link to="/" className="hover:underline">Home</Link>
+      <Link to="/about" className="hover:underline">About</Link>
+    </div>
+  </nav>
+);
 
 export default Navbar;
