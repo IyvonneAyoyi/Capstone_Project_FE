@@ -84,7 +84,7 @@ return (
           <div className="flex items-center justify-center h-full text-blue-600">
             <div className="flex flex-col items-center">
               <div className="w-12 h-12 border-4 border-blue-300 border-t-blue-600 rounded-full animate-spin"></div>
-              <p className="mt-3 text-lg font-semibold">Fetching rainfall data…</p>
+              <p className="mt-3 text-lg font-semibold">Fetching data…</p>
             </div>
           </div>
         ) : (
