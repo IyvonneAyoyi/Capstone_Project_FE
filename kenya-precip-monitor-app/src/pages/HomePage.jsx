@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
+import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import MapComponent from "../components/MapComponent";
 import townData from "../data/kenya_towns.json";
 import { getRiskLevel } from "../utils/riskLevel";
 import { getDailyRainfall } from "../api/weatherAPI";
 
-// ---- Date range options map ----
 const dateOptionMap = {
   "30 Days Ago": { type: "past", days: 30 },
   "3 Weeks Ago": { type: "past", days: 21 },
@@ -24,9 +24,8 @@ const HomePage = () => {
   const [selectedRisk, setSelectedRisk] = useState("All");
   const [selectedDate, setSelectedDate] = useState("Today");
   const [loading, setLoading] = useState(false);
-  const [sidebarOpen, setSidebarOpen] = useState(false); // Mobile toggle
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  // ---- Fetch rainfall + risk data ----
   useEffect(() => {
     const fetchRainfall = async () => {
       setLoading(true);
@@ -46,70 +45,61 @@ const HomePage = () => {
 
     fetchRainfall();
   }, [selectedDate]);
+return (
+  <div className="flex flex-col min-h-screen bg-gray-50">
 
-  return (
-    <div className="flex flex-col min-h-screen relative bg-gray-50">
-      {/* --- Mobile Filter Toggle Button --- */}
+    {/* --- Mobile toggle button --- */}
+    <div className="sm:hidden p-3 bg-white border-b border-gray-200 shadow-sm">
       <button
         onClick={() => setSidebarOpen(!sidebarOpen)}
-        aria-label="Toggle filter sidebar"
-        aria-expanded={sidebarOpen}
-        className="sm:hidden bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 m-3 rounded-md z-[70] shadow-md focus:outline-none focus:ring-2 focus:ring-blue-300"
+        className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md w-full"
       >
         {sidebarOpen ? "Close Filters" : "Open Filters"}
       </button>
-
-      <div className="flex flex-1 relative">
-        {/* --- Sidebar (Collapsible on mobile) --- */}
-        <div
-          className={`absolute sm:static top-0 left-0 h-full sm:h-auto 
-            transform transition-transform ease-in-out duration-300 
-            bg-white shadow-2xl sm:shadow-none border-r border-gray-200 
-            z-[60] w-72 sm:w-80 overflow-y-auto
-            ${sidebarOpen ? "translate-x-0" : "-translate-x-full"} 
-            sm:translate-x-0`}
-        >
-          <Sidebar
-            towns={towns}
-            selectedTown={selectedTown}
-            setSelectedTown={setSelectedTown}
-            selectedRisk={selectedRisk}
-            setSelectedRisk={setSelectedRisk}
-            selectedDate={selectedDate}
-            setSelectedDate={setSelectedDate}
-          />
-        </div>
-
-        {/* --- Backdrop overlay (mobile only) --- */}
-        {sidebarOpen && (
-          <div
-            className="fixed inset-0 bg-black bg-opacity-40 sm:hidden z-[50] backdrop-blur-[2px]"
-            onClick={() => setSidebarOpen(false)}
-            aria-hidden="true"
-          ></div>
-        )}
-
-        {/* --- Main Map Section --- */}
-        <main className="flex-1 flex items-center justify-center p-4 sm:p-6">
-          {loading ? (
-            <div className="flex flex-col items-center justify-center text-blue-600">
-              <div className="w-12 h-12 border-4 border-blue-300 border-t-blue-600 rounded-full animate-spin"></div>
-              <p className="mt-4 text-lg font-semibold">
-                Fetching rainfall data…
-              </p>
-            </div>
-          ) : (
-            <MapComponent
-              towns={towns}
-              townFilter={selectedTown}
-              riskFilter={selectedRisk}
-              dateFilter={selectedDate}
-            />
-          )}
-        </main>
-      </div>
     </div>
-  );
+
+    {/* --- Main Layout --- */}
+    <div className="flex flex-1 flex-col sm:flex-row">
+      {/* --- Sidebar --- */}
+      <div
+  className={`transition-all duration-300 ease-in-out bg-white border-b sm:border-r border-gray-200 shadow-md p-4 z-10
+    ${sidebarOpen ? "max-h-[80vh] opacity-100 overflow-y-auto" : "max-h-0 opacity-0 overflow-hidden sm:max-h-none sm:opacity-100 sm:overflow-visible"}
+    sm:w-80 w-full`}
+>
+
+        <Sidebar
+          towns={towns}
+          selectedTown={selectedTown}
+          setSelectedTown={setSelectedTown}
+          selectedRisk={selectedRisk}
+          setSelectedRisk={setSelectedRisk}
+          selectedDate={selectedDate}
+          setSelectedDate={setSelectedDate}
+        />
+      </div>
+
+      {/* --- Map Area --- */}
+      <main className="flex-1 relative">
+        {loading ? (
+          <div className="flex items-center justify-center h-full text-blue-600">
+            <div className="flex flex-col items-center">
+              <div className="w-12 h-12 border-4 border-blue-300 border-t-blue-600 rounded-full animate-spin"></div>
+              <p className="mt-3 text-lg font-semibold">Fetching rainfall data…</p>
+            </div>
+          </div>
+        ) : (
+          <MapComponent
+            towns={towns}
+            townFilter={selectedTown}
+            riskFilter={selectedRisk}
+            dateFilter={selectedDate}
+          />
+        )}
+      </main>
+    </div>
+  </div>
+);
+
 };
 
 export default HomePage;
