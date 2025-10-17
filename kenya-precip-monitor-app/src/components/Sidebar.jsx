@@ -1,4 +1,3 @@
-// src/components/Sidebar.js
 import { useMemo } from "react";
 
 const Sidebar = ({
@@ -45,7 +44,7 @@ const Sidebar = ({
 
   return (
     <div className="w-72 bg-gray-50 shadow-lg p-6 flex flex-col overflow-y-auto">
-      <h1 className="text-2xl font-bold mb-6">Kenya Rainfall Monitor</h1>
+      <h1 className="text-2xl font-bold mb-6">Kenya Rainfall Dashboard</h1>
 
       {/* Town Dropdown */}
       <div className="mb-4">
