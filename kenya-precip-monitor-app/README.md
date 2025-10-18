@@ -9,9 +9,9 @@ This project is my **Frontend Capstone Project** at ALX, and it integrates my **
 - React app scaffolded with **Vite**
 - **Tailwind CSS** integrated for styling
 - **React Router** for navigation
-- Interactive **MapComponent** displaying towns with rainfall and risk levels
-  - **CircleMarkers** to represent towns
-  - **Popups** on markers showing towns,rainfall and risk information
+- Interactive **MapComponent** displaying towns with rainfall and risk levels  
+  - **CircleMarkers** to represent towns  
+  - **Popups** on markers showing towns, rainfall, and risk information  
   - Zoom and scroll functionality for map navigation
 - Filters for **towns, risk levels, and forecast dates**
 - **Navbar** with responsive design
@@ -26,25 +26,44 @@ This project is my **Frontend Capstone Project** at ALX, and it integrates my **
 
 ---
 
+## Data Source: Open-Meteo API
+
+The **PrecipMonitor KE App** fetches rainfall and forecast data from the [Open-Meteo API](https://open-meteo.com/), a free, open-source weather data service.
+
+- **API Coverage**
+  - Provides **historical rainfall data** for up to **3 months** in the past  
+  - Offers **forecast data** for up to **16 days ahead**
+  - Supports multiple weather parameters including precipitation, temperature, humidity, and wind speed
+- **API Used:** `https://api.open-meteo.com/v1/forecast`
+- **Parameters:**
+  - `latitude` and `longitude` — town coordinates
+  - `daily=precipitation_sum` — retrieves total daily rainfall
+  - `timezone=Africa/Nairobi` — ensures data matches local time
+- **Usage in App:**
+  - Data is fetched dynamically using the **Fetch API**
+  - Results are displayed on the interactive **Leaflet map**
+  - Users can filter rainfall and flood risk information by **town** and **risk level**
+
+---
+
 ## Geospatial Applications
 - Applied **Geospatial Information Science principles**:
-  - **Geocoded all towns using OpenCage API**, converting town names into latitude and longitude coordinates for accurate mapping and finally converting the CSV file containing the towns location information into a JSON file.
+  - **Geocoded all towns using OpenCage API**, converting town names into latitude and longitude coordinates for accurate mapping and finally converting the CSV file containing the towns’ location information into a JSON file.
   - Rainfall data combined with geospatial coordinates for visual flood risk representation.
-  - Interactive map shows towns via CircleMarkers and Popups.
+  - Interactive map shows towns via **CircleMarkers** and **Popups**.
   - Zoom and scroll allow users to explore Kenya’s towns spatially.
-
 
 ---
 
 ## Tech Stack
-- **Frontend:** React, Tailwind CSS
-- **Mapping & Geospatial:** Leaflet CSS, CircleMarkers, Popups
-- **Routing:** React Router DOM
-- **State & Side Effects:** React Hooks (`useState`, `useEffect`, `useRef`,useMemo)
-- **Data Fetching:** Fetch API
-- **Caching:** LocalStorage + in-memory cache
-- **Package Manager:** npm
-- **Version Control:** Git & GitHub
+- **Frontend:** React, Tailwind CSS  
+- **Mapping & Geospatial:** Leaflet CSS, CircleMarkers, Popups  
+- **Routing:** React Router DOM  
+- **State & Side Effects:** React Hooks (`useState`, `useEffect`, `useRef`, `useMemo`)  
+- **Data Fetching:** Fetch API  
+- **Caching:** LocalStorage + in-memory cache  
+- **Package Manager:** npm  
+- **Version Control:** Git & GitHub  
 
 ---
 
@@ -81,7 +100,6 @@ This project is my **Frontend Capstone Project** at ALX, and it integrates my **
 ├── tailwind.config.js
 ├── postcss.config.js
 └── vite.config.js
-
 ```
 ## Getting Started
 
