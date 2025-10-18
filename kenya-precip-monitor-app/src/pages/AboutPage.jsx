@@ -37,10 +37,9 @@ const AboutPage = () => (
       <section className="mb-8">
         <h3 className="text-xl font-semibold text-blue-700 mb-3">How It Works</h3>
         <p className="text-justify leading-relaxed">
-          Users can filter data by <strong>town</strong>, <strong>risk level</strong>,
-          or <strong>date range</strong> — from historical rainfall to upcoming forecasts.
-          The map dynamically updates to display color-coded precipitation data and
-          risk zones, offering a clear picture of weather trends.
+          Users can filter data by <strong>town</strong>,<strong>risk level</strong>,
+          or <strong>date range</strong> from historical rainfall to upcoming forecasts.The map dynamically updates to display color-coded precipitation data and
+          risk zones,offering a clear picture of weather trends.
         </p>
       </section>
 
@@ -48,7 +47,7 @@ const AboutPage = () => (
         <h3 className="text-xl font-semibold text-blue-700 mb-3">Future Plans</h3>
         <p className="text-justify leading-relaxed">
           Future versions of <strong>PrecipMonitor KE</strong> will integrate more
-          datasets including <strong>soil moisture, land use, and river flow data</strong>
+          datasets including <strong>soil moisture, land use, and river flow data </strong>
           to create a more comprehensive and predictive climate monitoring platform.
         </p>
       </section>
