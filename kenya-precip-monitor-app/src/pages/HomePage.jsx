@@ -5,6 +5,7 @@ import townData from "../data/kenya_towns.json";
 import { getRiskLevel } from "../utils/riskLevel";
 import { getDailyRainfall } from "../api/weatherAPI";
 
+// Date options mapping
 const dateOptionMap = {
   "30 Days Ago": { type: "past", days: 30 },
   "3 Weeks Ago": { type: "past", days: 21 },
@@ -26,31 +27,43 @@ const HomePage = () => {
   const [error, setError] = useState(null);
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  // Cache rainfall data in memory
+  // In-memory cache (for session-level caching)
   const rainfallCache = useRef({});
 
   useEffect(() => {
     const fetchRainfall = async () => {
       setLoading(true);
       setError(null);
+
       const option = dateOptionMap[selectedDate] || { type: "forecast", days: 1 };
 
       try {
         const updatedTowns = await Promise.all(
           townData.map(async (t) => {
             const cacheKey = `${t.Latitude},${t.Longitude},${selectedDate}`;
+
+            // 1. Check in-memory cache
             if (rainfallCache.current[cacheKey]) {
-              // Use cached result
               return rainfallCache.current[cacheKey];
             }
 
-            // Fetch new data
+            // 2. Check localStorage cache
+            const localCache = localStorage.getItem(cacheKey);
+            if (localCache) {
+              const parsed = JSON.parse(localCache);
+              rainfallCache.current[cacheKey] = parsed; // Store in memory
+              return parsed;
+            }
+
+            // 3. Fetch new data
             const rainfall = await getDailyRainfall(t.Latitude, t.Longitude, option);
             const risk = getRiskLevel(rainfall);
             const result = { ...t, rainfall, risk };
 
-            // Cache the result
+            // Store in both caches
             rainfallCache.current[cacheKey] = result;
+            localStorage.setItem(cacheKey, JSON.stringify(result));
+
             return result;
           })
         );
