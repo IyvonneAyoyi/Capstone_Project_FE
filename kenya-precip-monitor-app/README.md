@@ -134,3 +134,7 @@ Add user accounts for personalized monitoring
 Optimize API requests and add rate-limit handling
 
 Deploy as a fullstack web app with backend database integration
+
+--- 
+## Deployment
+This application will be deployed using Vercel
